@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu do Jogo</title>
+  <script src="script.js" defer></script>
+  <style>
+    /* Estilos do menu conforme fornecido anteriormente */
+  </style>
+</head>
+<body>
+
+  <div id="menu-container">
+    <label for="player-team">Escolha seu time:</label>
+    <select id="player-team" name="player-team">
+      <option value="Fluminense">Fluminense</option>
+      <option value="Flamengo">Flamengo</option>
+      <!-- Adicione mais opções conforme necessário -->
+    </select>
+
+    <label for="opponent-team">Escolha o time adversário:</label>
+    <select id="opponent-team" name="opponent-team">
+      <option value="Fluminense">Fluminense</option>
+      <option value="Flamengo">Flamengo</option>
+      <!-- Adicione mais opções conforme necessário -->
+    </select>
+
+    <button onclick="proximapagina()">Iniciar Jogo</button>
+  </div>
+
+  <script>
+    function proximapagina() {
+      // Obter os valores selecionados
+      var playerTeam = document.getElementById('player-team').value;
+      var opponentTeam = document.getElementById('opponent-team').value;
+
+      // Redirecionar para a página do jogo com os parâmetros escolhidos
+      window.location.href = 'jogo.html?player=' + playerTeam + '&opponent=' + opponentTeam;
+    }
+  </script>
+
+</body>
+</html>

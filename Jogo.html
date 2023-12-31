@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Super Trunfo Futebol</title>
   <link rel="stylesheet" type="text/css" href="Estilodojogo.css" media="screen" />
+  <!-- Times -->
+  <script src="Times.js/Flamengo.js" defer></script>
+  <script src="Times.js/Fluminense.js" defer></script>
+  <!-- Times -->
   <script src="script.js" defer></script>
 </head>
 <body>
@@ -12,26 +16,32 @@
   <h1>Super Trunfo Futebol</h1>
 
   <div id="game-container">
-    <div id="player-hand">
+    <div id="player-hand" style="display: flex;">
     </div>
-    <div id="computer-hand">
+    <div id="played-cards-player" style="display: none;">
+    </div>
+  </div>
+  <div id="game-container-computer">
+    <div id="computer-hand" style="display: flex;">
+    </div>
+    <div id="played-cards-computer" style="display: none;">
     </div>
   </div>
 
   <div id="result"></div>
 
   <label for="attribute" id="attribute">Escolha um Atributo:</label>
-  <select id="attribute" name="attribute" onchange="updateSelectedAttribute(this.value)">
-    <option value="Defesa">Defesa</option>
-    <option value="Control">Control</option>
-    <option value="Ataque">Ataque</option>
-    <option value="Over">Overall</option>
-  </select>
+  <div id="attribute-buttons">
+    <button class="Defesa" onclick="updateSelectedAttribute('Defesa')">Defesa</button>
+    <button class="Control" onclick="updateSelectedAttribute('Control')">Control</button>
+    <button class="Ataque" onclick="updateSelectedAttribute('Ataque')">Ataque</button>
+    <button class="Overall" onclick="updateSelectedAttribute('Over')">Overall</button>
+  </div>
 
   <button onclick="play()" id="playButton" disabled>Jogar</button>
 
   <div id="new-round">
-    <button onclick="location.reload()">Nova Rodada (F5)</button>
+    <button onclick="reiniciarjogo()">Nova Rodada</button>
   </div>
 
   <div id="score">Pontuação: <span id="playerScore">0</span> - <span id="computerScore">0</span></div>
