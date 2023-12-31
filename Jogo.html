@@ -12,38 +12,39 @@
   <script src="script.js" defer></script>
 </head>
 <body>
-
-  <h1>Super Trunfo Futebol</h1>
-
-  <div id="game-container">
-    <div id="player-hand" style="display: flex;">
+  
+  <div id="jogo">
+    <div id="game-container">
+      <div id="player-hand" style="display: flex;">
+      </div>
+      <div id="played-cards-player" style="display: none;">
+      </div>
     </div>
-    <div id="played-cards-player" style="display: none;">
+    <div id="game-container-computer">
+      <div id="computer-hand" style="display: flex;">
+      </div>
+      <div id="played-cards-computer" style="display: none;">
+      </div>
     </div>
+  </div>  
+
+  <div id="fundojogo">
+    <div id="result"></div>
+
+    <label for="attribute" id="attribute">Escolha um Atributo:</label>
+      <div id="attribute-buttons">
+        <button class="Defesa" onclick="updateSelectedAttribute('Defesa')">Defesa</button>
+        <button class="Control" onclick="updateSelectedAttribute('Control')">Control</button>
+        <button class="Ataque" onclick="updateSelectedAttribute('Ataque')">Ataque</button>
+        <button class="Overall" onclick="updateSelectedAttribute('Over')">Overall</button>
+      </div>
+
+      <button onclick="play()" id="playButton" disabled>Jogar</button>
+
+      <div id="new-round">
+        <button onclick="reiniciarjogo()">Nova Rodada</button>
+      </div>
+      <div id="score">Pontuação: <span id="playerScore">0</span> - <span id="computerScore">0</span></div>
   </div>
-  <div id="game-container-computer">
-    <div id="computer-hand" style="display: flex;">
-    </div>
-    <div id="played-cards-computer" style="display: none;">
-    </div>
-  </div>
-
-  <div id="result"></div>
-
-  <label for="attribute" id="attribute">Escolha um Atributo:</label>
-  <div id="attribute-buttons">
-    <button class="Defesa" onclick="updateSelectedAttribute('Defesa')">Defesa</button>
-    <button class="Control" onclick="updateSelectedAttribute('Control')">Control</button>
-    <button class="Ataque" onclick="updateSelectedAttribute('Ataque')">Ataque</button>
-    <button class="Overall" onclick="updateSelectedAttribute('Over')">Overall</button>
-  </div>
-
-  <button onclick="play()" id="playButton" disabled>Jogar</button>
-
-  <div id="new-round">
-    <button onclick="reiniciarjogo()">Nova Rodada</button>
-  </div>
-
-  <div id="score">Pontuação: <span id="playerScore">0</span> - <span id="computerScore">0</span></div>
 </body>
 </html>

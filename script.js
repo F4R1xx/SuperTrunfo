@@ -24,10 +24,14 @@ function startGame(playerTeam, opponentTeam) {
     case 'Fluminense':
       Fluminense.sort(() => Math.random() - 0.5);
       playerHand = Fluminense.slice(0, 7);
+      var novaImagem = 'Fluminense/FundoFluminense.jpg';
+      document.body.style.backgroundImage = `url('${novaImagem}')`;
       break;
     case 'Flamengo':
       Flamengo.sort(() => Math.random() - 0.5);
       playerHand = Flamengo.slice(0, 7);
+      var novaImagem = 'Flamengo/FundoFlamengo.jpg';
+      document.body.style.backgroundImage = `url('${novaImagem}')`;
       break;
     // Adicione mais casos conforme necessário para outros times
   }
@@ -254,7 +258,7 @@ function endGame() {
 }
 
 function reiniciarjogo(){
-  startGame(playerTeam, opponentTeam)
+  window.location.href = 'jogo.html?player=' + playerTeam + '&opponent=' + opponentTeam;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
