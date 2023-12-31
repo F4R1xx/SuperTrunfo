@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Super Trunfo Futebol</title>
+  <link rel="stylesheet" type="text/css" href="Estilodojogo.css" media="screen" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <h1>Super Trunfo Futebol</h1>
+
+  <div id="game-container">
+    <div id="player-hand">
+    </div>
+    <div id="computer-hand">
+    </div>
+  </div>
+
+  <div id="result"></div>
+
+  <label for="attribute" id="attribute">Escolha um Atributo:</label>
+  <select id="attribute" name="attribute" onchange="updateSelectedAttribute(this.value)">
+    <option value="Defesa">Defesa</option>
+    <option value="Control">Control</option>
+    <option value="Ataque">Ataque</option>
+    <option value="Over">Overall</option>
+  </select>
+
+  <button onclick="play()" id="playButton" disabled>Jogar</button>
+
+  <div id="new-round">
+    <button onclick="location.reload()">Nova Rodada (F5)</button>
+  </div>
+
+  <div id="score">Pontuação: <span id="playerScore">0</span> - <span id="computerScore">0</span></div>
+</body>
+</html>

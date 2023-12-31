@@ -1,0 +1,96 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background-color: #f2f2f2;
+    color: #333;
+    overflow-x: hidden;
+  }
+
+  h1 {
+    color: #007bff;
+  }
+
+  #game-container {
+    width: fit-content;
+  }
+
+  #player-hand, #computer-hand {
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+  }
+
+  #player-hand h2, #computer-hand h2{
+    width: 200px;
+  }
+
+  #result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .card {
+    cursor: pointer;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .card img {
+    max-width: 120px;
+    height: 220px;
+    margin-bottom: 10px;
+    border: 1px solid rgb(167, 167, 167);
+  }
+
+  .card.selected {
+    transform: scale(1.7);
+  }
+
+  #attribute {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+  }
+
+  #playButton {
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  #playButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+
+  #new-round {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+
+  #score {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
