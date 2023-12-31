@@ -33,6 +33,19 @@ function startGame(playerTeam, opponentTeam) {
       var novaImagem = 'Flamengo/FundoFlamengo.jpg';
       document.body.style.backgroundImage = `url('${novaImagem}')`;
       break;
+    case 'Botafogo':
+      Botafogo.sort(() => Math.random() - 0.5);
+      playerHand = Botafogo.slice(0, 7);
+      var novaImagem = 'Botafogo/FundoBotafogo.jpg';
+      document.body.style.backgroundImage = `url('${novaImagem}')`;
+      break;
+    case 'Vasco':
+      Vasco.sort(() => Math.random() - 0.5);
+      playerHand = Vasco.slice(0, 7);
+      var novaImagem = 'Vasco/FundoVasco.jpg';
+      document.body.style.backgroundImage = `url('${novaImagem}')`;
+      break;
+        
     // Adicione mais casos conforme necessário para outros times
   }
 
@@ -44,6 +57,14 @@ function startGame(playerTeam, opponentTeam) {
     case 'Flamengo':
       Flamengo.sort(() => Math.random() - 0.5);
       computerHand = Flamengo.slice(0, 7);
+      break;
+    case 'Botafogo':
+      Botafogo.sort(() => Math.random() - 0.5);
+      computerHand = Botafogo.slice(0, 7);
+      break;
+    case 'Vasco':
+      Vasco.sort(() => Math.random() - 0.5);
+      computerHand = Vasco.slice(0, 7);
       break;
     // Adicione mais casos conforme necessário para outros times
   }
@@ -257,6 +278,10 @@ function endGame(opponentTeam) {
       case 'Fluminense':
         earnMoney(100);
       case 'Flamengo':
+        earnMoney(100);
+      case 'Botafogo':
+        earnMoney(100);
+      case 'Vasco':
         earnMoney(100);
       // Adicione mais casos conforme necessário para outros times
     }

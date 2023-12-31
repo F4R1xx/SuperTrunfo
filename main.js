@@ -1,8 +1,13 @@
 const fluminenseBought = isTeamBought('Fluminense');
 const flamengoBought = isTeamBought('Flamengo');
+const BotafogoBought = isTeamBought('Botafogo');
+const VascoBought = isTeamBought('Vasco');
 
 var FluminenseButtons = document.getElementsByClassName("FluminenseButton");
 var FlamengoButtons = document.getElementsByClassName("FlamengoButton");
+var BotafogoButtons = document.getElementsByClassName("BotafogoButton");
+var VascoButtons = document.getElementsByClassName("VascoButton");
+
 
 // Função para obter o saldo do localStorage
 function getBalance() {
@@ -35,9 +40,13 @@ function getBalance() {
   function updateTeamsUI() {
     const fluminenseCheckbox = document.getElementById('fluminenseCheckbox');
     const flamengoCheckbox = document.getElementById('flamengoCheckbox');
+    const BotafogoCheckbox = document.getElementById('BotafogoCheckbox');
+    const VascoCheckbox = document.getElementById('VascoCheckbox');
   
     fluminenseCheckbox.checked = getTeamState('Fluminense');
     flamengoCheckbox.checked = getTeamState('Flamengo');
+    BotafogoCheckbox.checked = getTeamState('Botafogo');
+    VascoCheckbox.checked = getTeamState('Vasco');
   }
   
   // Função para atualizar o saldo na interface do usuário
@@ -111,6 +120,8 @@ function verifica_times() {
     console.log('Teste 1');
     setButtonState(FluminenseButtons, 'Fluminense');
     setButtonState(FlamengoButtons, 'Flamengo');
+    setButtonState(BotafogoButtons, 'Botafogo');
+    setButtonState(VascoButtons, 'Vasco');
 }
 
 function setButtonState(buttons, teamName) {
