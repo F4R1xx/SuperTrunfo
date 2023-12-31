@@ -217,7 +217,7 @@ function play() {
     if (playerHand.length === 0 || computerHand.length === 0) {
       document.getElementById('computer-hand').style.display = 'none';
       document.getElementById('player-hand').style.display = 'none';
-      endGame();
+      endGame(opponentTeam);
     }
   }
 }
@@ -251,7 +251,16 @@ function updateScoreUI() {
   document.getElementById('computerScore').textContent = computerScore;
 }
 
-function endGame() {
+function endGame(opponentTeam) {
+  if (playerScore > computerScore){
+    switch (opponentTeam) {
+      case 'Fluminense':
+        earnMoney(100);
+      case 'Flamengo':
+        earnMoney(100);
+      // Adicione mais casos conforme necessário para outros times
+    }
+  }
   const resultElement = document.getElementById('result');
   resultElement.textContent = 'Fim de Jogo!';
   document.getElementById('playButton').disabled = false;

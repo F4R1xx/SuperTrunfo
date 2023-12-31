@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Money and Teams</title>
+  <script src="script.js" defer></script>
+  <script src="scriptmenu.js" defer></script>
+  <script src="main.js" defer></script>
+  <link rel="stylesheet" type="text/css" href="menu.css" media="screen" />
+</head>
+<body>
+    <h1>Money and Teams</h1>
+    <p>Your balance: $<span id="balance">0</span></p>
+    <p>Teams:</p>
+    <label>
+      <input type="checkbox" id="fluminenseCheckbox" disabled> Fluminense
+    </label>
+    <br>
+    <label>
+      <input type="checkbox" id="flamengoCheckbox" disabled> Flamengo
+    </label>
+    <br>
+    <button onclick="buyTeam('Fluminense', 5)">Buy Fluminense ($5)</button>
+    <button onclick="buyTeam('Flamengo', 8)">Buy Flamengo ($8)</button>
+    <button onclick="sellTeam('Fluminense', 0)">VENDER Fluminense ($5)</button>
+    <button onclick="sellTeam('Flamengo', 0)">VENDER Flamengo ($8)</button>
+    <a href="index.html"><button class="opponent-button" >Menu</button></a>
+    <br>
+  </body>
+  </html>
