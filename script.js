@@ -17,6 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function startGame(playerTeam, opponentTeam) {
+  if (localStorage.getItem(opponentTeam) == 'false' || localStorage.getItem(playerTeam) == 'false'){
+    console.log('Error - Você não possui esse time');
+    alert('Error - Você não possui esse time');
+    endGame();
+  }else{
   // Embaralhar as cartas conforme necessário
   // ...
   // Inicializar as mãos do jogador e do computador com base nos times escolhidos
@@ -72,6 +77,7 @@ function startGame(playerTeam, opponentTeam) {
   // Atualizar a interface do usuário
   updateHandUI();
   updateScoreUI();
+}
 }
 
 function updateHandUI() {
