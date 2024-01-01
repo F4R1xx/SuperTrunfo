@@ -117,22 +117,25 @@ function isTeamBought(teamName) {
   
 
 function verifica_times() {
-    console.log('Teste 1');
     setButtonState(FluminenseButtons, 'Fluminense');
     setButtonState(FlamengoButtons, 'Flamengo');
     setButtonState(BotafogoButtons, 'Botafogo');
     setButtonState(VascoButtons, 'Vasco');
 }
 
-function setButtonState(buttons, teamName) {
-    const teamBought = isTeamBought(teamName);
+function setButtonState(images, teamName) {
+  const teamBought = isTeamBought(teamName);
 
-    for (let i = 0; i < buttons.length; i++) {
-        const button = buttons[i];
-        button.disabled = !teamBought;
-    }
+  for (let i = 0; i < images.length; i++) {
+      const image = images[i];
+      if (teamBought) {
+          image.classList.remove('disabled');
+      } else {
+          image.classList.add('disabled');
+      }
+  }
 
-    console.log(`O ${teamName} foi ${teamBought ? '' : 'não '}comprado.`);
+  console.log(`O ${teamName} foi ${teamBought ? '' : 'não '}comprado.`);
 }
 
 // Restante do seu código...

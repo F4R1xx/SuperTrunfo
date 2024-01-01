@@ -6,13 +6,13 @@ var selectedTeams = {
   function selectTeam(team, type) {
     selectedTeams[type] = team;
 
-    // Remove a classe 'selected' de todos os botões do tipo e adiciona apenas ao botão selecionado
-    var buttons = document.querySelectorAll('.' + type + '-button');
-    buttons.forEach(function(button) {
-      if (button.textContent !== team) {
-        button.classList.remove('selected');
+    // Remove a classe 'selected' de todas as imagens do tipo e adiciona apenas à imagem selecionada
+    var images = document.querySelectorAll('.' + type + '-button');
+    images.forEach(function(image) {
+      if (image.alt !== team) {
+        image.classList.remove('selected');
       } else {
-        button.classList.add('selected');
+        image.classList.add('selected');
       }
     });
 

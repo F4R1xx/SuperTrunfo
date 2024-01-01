@@ -5,8 +5,11 @@
   }
 
   .player-button, .opponent-button {
+    cursor: pointer;
     display: inline-block;
     padding: 10px;
+    width: 100px;
+    height: 100px;
     margin: 5px;
     margin-left: 5px;
     cursor: pointer;
@@ -17,8 +20,12 @@
     border-radius: 10px;
   }
 
-  .player-button:hover, .opponent-button:hover {
-    background-color: #f8f9fa;
+  .player-button:hover{
+    background-color: rgb(79, 79, 255);
+  }
+
+  .opponent-button:hover{
+    background-color: rgb(255, 62, 62);
   }
 
   .player-button.selected {
@@ -60,3 +67,13 @@
   h1{
     font-family: Arial, Helvetica, sans-serif;
   }
+
+  .disabled {
+    cursor: default;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.disabled:hover {
+  background-color: white;
+}
