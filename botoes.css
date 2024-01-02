@@ -1,0 +1,139 @@
+.bodyMenu{
+    margin-top: 200px;
+    text-align:center;
+    background-color:#ffffff;
+  }
+  
+  .button{
+    position:relative;
+    display:inline-block;
+    margin:20px;
+  }
+  
+  .button a{
+    color:rgb(0, 0, 0);
+    font-family:Helvetica, sans-serif;
+    font-weight:bold;
+    font-size:36px;
+    text-align: center;
+    text-decoration:none;
+    background-color:#54fff6;
+    display:block;
+    position:relative;
+    padding:20px 40px;
+    
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    text-shadow: 0px 1px 0px #000;
+    filter: dropshadow(color=#000, offx=0px, offy=1px);
+    
+    -webkit-box-shadow:inset 0 1px 0 #00fff2, 0 10px 0 #277c78;
+    -moz-box-shadow:inset 0 1px 0 #00fff2, 0 10px 0 #277c78;
+    box-shadow:inset 0 1px 0 #00fff2, 0 10px 0 #277c78;
+    
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+  
+  .button a:hover{
+    top:10px;
+    background-color:#277c78;
+    
+    -webkit-box-shadow:inset 0 1px 0 #277c78, inset 0 -3px 0 #005a56;
+    -moz-box-shadow:inset 0 1px 0 #277c78, inset 0 -3px 0 #005a56;
+    box-shadow:inset 0 1px 0 #277c78, inset 0 -3px 0 #005a56;
+  }
+  
+  .button:after{
+    content:"";
+    height:100%;
+    width:100%;
+    padding:4px;
+    position: absolute;
+    bottom:-15px;
+    left:-4px;
+    z-index:-1;
+    background-color:#bebebe;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+
+  .button2{
+    position:relative;
+    display:inline-block;
+    margin:20px;
+  }
+  
+  .button2 a{
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:20px;
+    text-align: center;
+    text-decoration:none;
+    background-color:#800000;
+    display:block;
+    position:relative;
+    padding:10px 20px;
+    
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    text-shadow: 0px 1px 0px #000;
+    filter: dropshadow(color=#000, offx=0px, offy=1px);
+    
+    -webkit-box-shadow:inset 0 1px 0 #800000, 0 3px 0 #420000;
+    -moz-box-shadow:inset 0 1px 0 #800000, 0 3px 0 #420000;
+    box-shadow:inset 0 1px 0 #800000, 0 3px 0 #420000;
+    
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+  
+  .button2 a:hover{
+    background-color:#420000;
+    
+    -webkit-box-shadow:inset 0 1px 0 #800000, 0 3px 0 #000000;
+    -moz-box-shadow:inset 0 1px 0 #800000, 0 3px 0 #000000;
+    box-shadow:inset 0 1px 0 #800000, 0 3px 0 #000000;
+  }
+
+  .buttonMacete{
+    position:relative;
+    cursor: pointer;
+    border:none!important;
+    display:inline-block;
+  }
+  
+  .buttonMacete a{
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:17px;
+    text-align: center;
+    text-decoration:none;
+    background-color:#06af00;
+    display:block;
+    position:relative;
+    padding:5px 10px;
+    
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    text-shadow: 0px 1px 0px #000;
+    filter: dropshadow(color=#000, offx=0px, offy=1px);
+    
+    -webkit-box-shadow:inset 0 1px 0 #06af00, 0 3px 0 #035c00;
+    -moz-box-shadow:inset 0 1px 0 #06af00, 0 3px 0 #035c00;
+    box-shadow:inset 0 1px 0 #06af00, 0 3px 0 #035c00;
+    
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+  
+  .buttonMacete a:hover{
+    background-color:#035c00;
+    
+    -webkit-box-shadow:inset 0 1px 0 #06af00, 0 3px 0 #000000;
+    -moz-box-shadow:inset 0 1px 0 #06af00, 0 3px 0 #000000;
+    box-shadow:inset 0 1px 0 #06af00, 0 3px 0 #000000;
+  }
+
+

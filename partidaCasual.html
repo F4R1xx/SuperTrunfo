@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu do Jogo</title>
+  <script src="script.js" defer></script>
+  <script src="scriptmenu.js" defer></script>
+  <script src="main.js" defer></script>
+  <link rel="stylesheet" type="text/css" href="partidaCasual.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="botoes.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="balance.css" media="screen" />
+</head>
+<body>
+  <p><span id="balance">0</span></p>
+  <div id="menu-container">
+    <h1><label>Escolha seu time:</label></h1>
+    <div>
+      <img src="Fluminense/IconFluminense.png" alt="Fluminense" class="player-button FluminenseButton" onclick="selectTeam('Fluminense', 'player')"/>
+      <img src="Flamengo/IconFlamengo.png" alt="Flamengo" class="player-button FlamengoButton" onclick="selectTeam('Flamengo', 'player')"/>
+      <img src="Vasco/IconVasco.png" alt="Vasco" class="player-button VascoButton" onclick="selectTeam('Vasco', 'player')"/>
+      <img src="Botafogo/IconBotafogo.png" alt="Botafogo" class="player-button BotafogoButton" onclick="selectTeam('Botafogo', 'player')"/>
+      <!-- Adicione mais botões conforme necessário -->
+    </div>
+
+    <h1><label>Escolha o time adversário:</label></h1>
+    <div>
+      <img src="Fluminense/IconFluminense.png" alt="Fluminense" class="opponent-button FluminenseButton" onclick="selectTeam('Fluminense', 'opponent')"/>
+      <img src="Flamengo/IconFlamengo.png" alt="Flamengo" class="opponent-button FlamengoButton" onclick="selectTeam('Flamengo', 'opponent')"/>
+      <img src="Vasco/IconVasco.png" alt="Vasco" class="opponent-button VascoButton" onclick="selectTeam('Vasco', 'opponent')"/>
+      <img src="Botafogo/IconBotafogo.png" alt="Botafogo" class="opponent-button BotafogoButton" onclick="selectTeam('Botafogo', 'opponent')"/>
+      <!-- Adicione mais botões conforme necessário -->
+    </div>
+    <button id="start-game-btn" onclick="proximaPagina()" disabled><div ontouchstart="">
+      <div class="button">
+        Iniciar Jogo
+      </div>
+    </div></button>
+    <div ontouchstart="">
+      <div class="button2">
+        <a href="index.html">Voltar</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

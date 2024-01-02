@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Códigos</title>
+    <link rel="stylesheet" type="text/css" href="shop.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="botoes.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="macete.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="balance.css" media="screen" />
+    <script src="script.js" defer></script>
+    <script src="scriptmenu.js" defer></script>
+    <script src="main.js" defer></script>
+    <script src="macete.js" defer></script>
+</head>
+<body>
+    <p><span id="balance">0</span></p>
+    <div class="ContainerExterior">
+        <div class="Container">
+            <h2>Digite seu código!</h2>
+            <form id="meuFormulario">
+                <label for="meuInput"></label>
+                <div class="teste">
+                <input autocomplete="off" placeholder="Digite aqui..." type="text" id="meuInput" onkeydown="verificarEnter(event)">
+                    <button class="buttonMacete" type="button">
+                    <a onclick="enviarInput()">Enviar</a>
+                    </button>
+                </div>
+            </form>
+            <div ontouchstart="">
+                <div class="button2">
+                <a href="index.html">Voltar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

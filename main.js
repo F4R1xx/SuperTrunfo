@@ -8,6 +8,11 @@ var FlamengoButtons = document.getElementsByClassName("FlamengoButton");
 var BotafogoButtons = document.getElementsByClassName("BotafogoButton");
 var VascoButtons = document.getElementsByClassName("VascoButton");
 
+var FluminenseBanner = document.getElementsByClassName("FluminenseBanner");
+var FlamengoBanner = document.getElementsByClassName("FlamengoBanner");
+var BotafogoBanner = document.getElementsByClassName("BotafogoBanner");
+var VascoBanner = document.getElementsByClassName("VascoBanner");
+
 
 // Função para obter o saldo do localStorage
 function getBalance() {
@@ -52,8 +57,16 @@ function getBalance() {
   // Função para atualizar o saldo na interface do usuário
   function updateBalanceUI() {
     const balanceElement = document.getElementById('balance');
-    balanceElement.textContent = getBalance();
-  }
+    const balanceValue = getBalance();
+
+    // Formata o valor como dinheiro em Reais
+    const formattedBalance = new Intl.NumberFormat('pt-BR', {
+        style: 'currency',
+        currency: 'BRL',
+    }).format(balanceValue);
+
+    balanceElement.textContent = formattedBalance;
+}
   
   // Função para ganhar dinheiro
   function earnMoney(quantia) {
@@ -71,7 +84,7 @@ function getBalance() {
       const newBalance = currentBalance - spentAmount;
       setBalance(newBalance);
     } else {
-      alert("You don't have enough money to spend!");
+      alert("Você não tem dinheiro para gastar!");
     }
   }
 
@@ -83,15 +96,16 @@ function buyTeam(teamName, cost) {
       const newBalance = currentBalance - cost;
       setBalance(newBalance);
       setTeamState(teamName, true);
-      alert(`You bought ${teamName} for $${cost}.`);
+      alert(`Você comprou o ${teamName} por $${cost}.`);
     } else if (getTeamState(teamName)) {
-      alert(`You already own ${teamName}.`);
+      alert(`Você já tem o ${teamName}.`);
     } else {
-      alert(`Not enough money to buy ${teamName}.`);
+      alert(`Você não tem dinheiro suficiente para comprar o ${teamName}.`);
     }
   
     updateBalanceUI();
     updateTeamsUI();
+    verifica_times();
   }
 
   function sellTeam(teamName, sellPrice) {
@@ -101,13 +115,14 @@ function buyTeam(teamName, cost) {
       const newBalance = currentBalance + sellPrice;
       setBalance(newBalance);
       setTeamState(teamName, false);
-      alert(`You sold ${teamName} for $${sellPrice}.`);
+      alert(`Você vendeu o ${teamName} por $${sellPrice}.`);
     } else {
-      alert(`You don't own ${teamName} to sell.`);
+      alert(`Você não tem o ${teamName} para vender.`);
     }
   
     updateBalanceUI();
     updateTeamsUI();
+    verifica_times();
   }
   
   // Função para verificar se um time foi comprado
@@ -121,6 +136,10 @@ function verifica_times() {
     setButtonState(FlamengoButtons, 'Flamengo');
     setButtonState(BotafogoButtons, 'Botafogo');
     setButtonState(VascoButtons, 'Vasco');
+    setButtonStateBanner(FluminenseBanner, 'Fluminense');
+    setButtonStateBanner(FlamengoBanner, 'Flamengo');
+    setButtonStateBanner(VascoBanner, 'Vasco');
+    setButtonStateBanner(BotafogoBanner, 'Botafogo');
 }
 
 function setButtonState(images, teamName) {
@@ -138,14 +157,25 @@ function setButtonState(images, teamName) {
   console.log(`O ${teamName} foi ${teamBought ? '' : 'não '}comprado.`);
 }
 
-// Restante do seu código...
+function setButtonStateBanner(buttons, teamName) {
+  const teamBought = isTeamBought(teamName);
+  for (let i = 0; i < buttons.length; i++) {
+    const button = buttons[i];
+    if (teamBought) {
+      button.classList.add('disabled');
+    } else {
+      button.classList.remove('disabled');
+    }
+  }
+}
 
+// Restante do seu código...
 // Exemplo de como usar a função
 verifica_times();
-  
   
   
   // Inicialização da interface do usuário
   updateBalanceUI();
   updateTeamsUI();
+  
   

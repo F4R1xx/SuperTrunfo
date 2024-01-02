@@ -1,0 +1,47 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    text-align: center;
+    background-color: #f2f2f2;
+    overflow-x: hidden;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .Container{
+    text-align: center;
+  }
+
+  .botaoComprar {
+    border:none!important;
+    cursor: pointer;
+  }
+
+  .disabled{
+    cursor: default;
+    pointer-events: none;
+  }
+
+  .disabled img{
+    opacity: 0.5;
+  }
+
+  .botaoComprar.disabled {
+    position: relative;
+  }
+  
+  .botaoComprar.disabled::after {
+    content: "Comprado";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: red;
+    -webkit-text-stroke-width: 2px; /* largura da borda */
+    -webkit-text-stroke-color: #000000; /* cor da borda */
+    font-size: 50px;
+    font-weight: bold; 
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 1;
+  }

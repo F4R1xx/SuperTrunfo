@@ -2,7 +2,7 @@ let playerHand = [];
 let computerHand = [];
 let playedCardsPlayer = [];
 let playedCardsComputer = [];
-let selectedCardIndex = null;
+let selectedCardpartidaCasual = null;
 let selectedAttribute = null;
 let playerScore = 0;
 let computerScore = 0;
@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function startGame(playerTeam, opponentTeam) {
   if (localStorage.getItem(opponentTeam) == 'false' || localStorage.getItem(playerTeam) == 'false'){
     console.log('Error - Você não possui esse time');
+    window.location.href = 'index.html';
     alert('Error - Você não possui esse time');
     endGame();
   }else{
@@ -84,22 +85,21 @@ function updateHandUI() {
   const playerHandElement = document.getElementById('player-hand');
   const computerHandElement = document.getElementById('computer-hand');
   
-
   playerHandElement.innerHTML = '<h2>Seu Deck</h2>';
   computerHandElement.innerHTML = '<h2>Deck do Computador</h2>';
 
-  playerHand.forEach((card, index) => {
-    const cardElement = createCardElement(card, index);
+  playerHand.forEach((card, partidaCasual) => {
+    const cardElement = createCardElement(card, partidaCasual);
     playerHandElement.appendChild(cardElement);
   });
 
-  computerHand.forEach((card, index) => {
-    const cardElement = createCardElement(card, index, true);
+  computerHand.forEach((card, partidaCasual) => {
+    const cardElement = createCardElement(card, partidaCasual, true);
     computerHandElement.appendChild(cardElement);
   });
 }
 
-function createCardElement(card, index, isComputer = false, showFront = true, startWithBack = false) {
+function createCardElement(card, partidaCasual, isComputer = false, showFront = true, startWithBack = false) {
   const cardElement = document.createElement('div');
   cardElement.classList.add('card');
   
@@ -125,21 +125,21 @@ function createCardElement(card, index, isComputer = false, showFront = true, st
       backElement.src = card.back;
       cardElement.appendChild(backElement);
     }
-    cardElement.dataset.index = index;
-    cardElement.onclick = () => selectCard(index);
+    cardElement.dataset.partidaCasual = partidaCasual;
+    cardElement.onclick = () => selectCard(partidaCasual);
   }
 
   return cardElement;
 }
 
-function selectCard(index) {
+function selectCard(partidaCasual) {
   // Adiciona a seleção ao card atual
-  const selectedCard = document.querySelector(`#player-hand .card[data-index="${index}"]`);
+  const selectedCard = document.querySelector(`#player-hand .card[data-partidaCasual="${partidaCasual}"]`);
 
   if (selectedCard.classList.contains('selected')) {
     // Se já estiver selecionado, desmarque a seleção
     selectedCard.classList.remove('selected');
-    selectedCardIndex = null;
+    selectedCardpartidaCasual = null;
     document.getElementById('playButton').disabled = true;
   } else {
     // Remova a seleção do card anterior (se houver)
@@ -150,7 +150,7 @@ function selectCard(index) {
 
     // Adiciona a seleção ao card atual
     selectedCard.classList.add('selected');
-    selectedCardIndex = index;
+    selectedCardpartidaCasual = partidaCasual;
     if (selectedAttribute !== null){
       document.getElementById('playButton').disabled = false;
       }
@@ -169,7 +169,7 @@ function updateSelectedAttribute(attribute) {
   // Adiciona a classe 'selected' apenas ao botão clicado
   const selectedButton = event.target;
   selectedButton.classList.add('selected');
-  if (selectedCardIndex !== null){
+  if (selectedCardpartidaCasual !== null){
   document.getElementById('playButton').disabled = false;
   }
 }
@@ -181,14 +181,14 @@ function updatePlayedCardsUI() {
   playedCardsPlayerElement.innerHTML = '<h2>Cartas Jogadas (Player)</h2>';
   playedCardsComputerElement.innerHTML = '<h2>Cartas Jogadas (Computador)</h2>';
 
-  playedCardsPlayer.forEach((card, index) => {
-    const cardElement = createCardElement(card, index, false, true);
+  playedCardsPlayer.forEach((card, partidaCasual) => {
+    const cardElement = createCardElement(card, partidaCasual, false, true);
     playedCardsPlayerElement.appendChild(cardElement);
   });
 
-  playedCardsComputer.forEach((card, index) => {
+  playedCardsComputer.forEach((card, partidaCasual) => {
     // Adiciona o novo parâmetro startWithBack
-    const cardElement = createCardElement(card, index, true, true, index !== null);
+    const cardElement = createCardElement(card, partidaCasual, true, true, partidaCasual !== null);
     playedCardsComputerElement.appendChild(cardElement);
   });
 
@@ -197,8 +197,8 @@ function updatePlayedCardsUI() {
 }
 
 function play() {
-  if (selectedCardIndex !== null && selectedAttribute !== null) {
-    const playerCard = playerHand.splice(selectedCardIndex, 1)[0];
+  if (selectedCardpartidaCasual !== null && selectedAttribute !== null) {
+    const playerCard = playerHand.splice(selectedCardpartidaCasual, 1)[0];
     const computerCard = computerHand.pop();
 
     // Adicione a lógica para determinar qual lista deve ser atualizada
@@ -263,7 +263,7 @@ function createUsedCardElement(card) {
     const frontElement = document.createElement('img');
     frontElement.src = card.front;
     cardElement.appendChild(frontElement);
-    cardElement.dataset.index = index;
+    cardElement.dataset.partidaCasual = partidaCasual;
   }
 
   /*
