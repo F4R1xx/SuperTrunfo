@@ -1,18 +1,21 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   width: 100%;
+  height: 100vh;
   text-align: center;
   background-color: #f2f2f2;
   color: #333;
+  margin: 0;
   overflow-x: hidden;
   overflow-y: hidden;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 #game-container, #game-container-computer {
-  width: fit-content;
   display: flex;
+  width: fit-content;
   margin: 0 auto;
 }
 
@@ -21,13 +24,12 @@ body {
 }
 
 #played-cards-player, #played-cards-computer{
+  margin-top: 10px;
   margin-left: 10px;
 }
 
 #played-cards-player ,#played-cards-computer{
-  display: flex;
-  margin-top: 10px;
-  background-color: #fff;
+  background-color:#fff;
   border-radius: 8px;
   padding: 10px;
   border: 1px solid #ccc;
@@ -36,6 +38,7 @@ body {
 
 #player-hand, #computer-hand {
   margin-top: 10px;
+  margin-left: 10px;
   border: 1px solid #ccc;
   background-color: #fff;
   padding: 10px;
@@ -45,7 +48,7 @@ body {
 }
 
 h2{
-  width: 200px;
+  width: 150px;
 }
 
 #result {
@@ -59,7 +62,6 @@ h2{
 .card {
   cursor: pointer;
   margin-left: 10px;
-  margin-bottom: 10px;
   border: 2px solid transparent;
   border-radius: 8px;
   transition: border-color 0.3s ease, transform 0.3s ease;
@@ -68,7 +70,6 @@ h2{
 .card img {
   max-width: 120px;
   height: 220px;
-  margin-bottom: 10px;
   border: 1px solid rgb(167, 167, 167);
 }
 

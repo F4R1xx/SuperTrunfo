@@ -30,3 +30,5 @@ var selectedTeams = {
       alert('Por favor, selecione um time para o jogador e o oponente.');
     }
   }
+
+  

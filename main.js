@@ -42,17 +42,7 @@ function getBalance() {
   }
   
   // Função para atualizar a interface do usuário com o estado dos times
-  function updateTeamsUI() {
-    const fluminenseCheckbox = document.getElementById('fluminenseCheckbox');
-    const flamengoCheckbox = document.getElementById('flamengoCheckbox');
-    const BotafogoCheckbox = document.getElementById('BotafogoCheckbox');
-    const VascoCheckbox = document.getElementById('VascoCheckbox');
   
-    fluminenseCheckbox.checked = getTeamState('Fluminense');
-    flamengoCheckbox.checked = getTeamState('Flamengo');
-    BotafogoCheckbox.checked = getTeamState('Botafogo');
-    VascoCheckbox.checked = getTeamState('Vasco');
-  }
   
   // Função para atualizar o saldo na interface do usuário
   function updateBalanceUI() {
@@ -104,8 +94,8 @@ function buyTeam(teamName, cost) {
     }
   
     updateBalanceUI();
-    updateTeamsUI();
     verifica_times();
+    objeto.reload(forcedReload);
   }
 
   function sellTeam(teamName, sellPrice) {
@@ -121,8 +111,8 @@ function buyTeam(teamName, cost) {
     }
   
     updateBalanceUI();
-    updateTeamsUI();
     verifica_times();
+    objeto.reload(forcedReload);
   }
   
   // Função para verificar se um time foi comprado
@@ -171,11 +161,12 @@ function setButtonStateBanner(buttons, teamName) {
 
 // Restante do seu código...
 // Exemplo de como usar a função
-verifica_times();
+
   
   
   // Inicialização da interface do usuário
+  verifica_times();
   updateBalanceUI();
-  updateTeamsUI();
+  
   
   

@@ -63,3 +63,7 @@ button {
 .teste{
     display: flex;
 }
+
+#result{
+    color: #035c00;
+}

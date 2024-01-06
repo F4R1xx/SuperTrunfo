@@ -1,0 +1,70 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+}
+
+#jogo {
+    margin-bottom: 20px; /* Adjust margin for smaller screens */
+    text-align: center;
+}
+
+#game-container {
+    border: 15px; /* Adjust border for smaller screens */
+    margin: 0 auto;
+    width: 90%; /* Adjust width for smaller screens */
+    background-color: #f9f9f9;
+    padding: 10px; /* Adjust padding for smaller screens */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.team-container {
+    display: grid; /* Change to block for smaller screens */
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    margin-bottom: 10px; /* Adjust margin for smaller screens */
+}
+
+.team-container #player-hand {
+    display: block; /* Change to block for smaller screens */
+    justify-content: center;
+    gap: 10px;
+}
+
+.card {
+    width: 100%; /* Adjust width for smaller screens */
+    height: auto; /* Adjust height for smaller screens */
+    margin: 5px 0; /* Adjust margin for smaller screens */
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: scale(1.5); /* Adjust scale for smaller screens */
+    z-index: 9999;
+}
+
+h2 {
+    font-size: 18px; /* Adjust font size for smaller screens */
+    margin-bottom: 10px; /* Adjust margin for smaller screens */
+    color: #333;
+}
+
+h1{
+    margin-top: 75px;
+    position: block;
+    text-align: center;
+}
+
+.button2{
+    margin-top: 0px !important;
+    margin-left: 40px !important;
+}

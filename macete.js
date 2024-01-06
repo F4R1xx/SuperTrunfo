@@ -2,13 +2,16 @@ function enviarInput() {
     var valorInput = document.getElementById('meuInput').value;
     console.log('Valor do input:', valorInput);
     if (valorInput == "DevMoney100"){
-        earnMoney(100000000)
+        earnMoney(10000000000)
+        mensagem_macete()
     }
     if (valorInput == "DevMoney-100"){
         spendMoney(100000000)
+        mensagem_macete()
     }
     if (valorInput == "BotafofoCamisa10"){
         buyTeamMacete("Botafogo",0)
+        mensagem_macete()
     }
     if (valorInput == "UnlockAllTeamsFree"){
         if (getTeamState("Fluminense") == false){
@@ -24,7 +27,7 @@ function enviarInput() {
             buyTeamMacete("Vasco",0)
         }
         else{alert('Você já tem todos os times !');}
-            
+        mensagem_macete()
     }
     if (valorInput == "Dev01"){
         if (getTeamState("Fluminense") == true){
@@ -39,6 +42,7 @@ function enviarInput() {
         if (getTeamState("Vasco") == true){
             sellTeamMacete("Vasco",0)
         }
+        mensagem_macete()
     }
     
 }
@@ -71,4 +75,12 @@ function sellTeamMacete(teamName, sellPrice) {
       setTeamState(teamName, false);
     } 
   
+}
+
+function mensagem_macete(){
+    const resultElement = document.getElementById('result');
+        resultElement.textContent = 'Código usado com sucesso';
+        setTimeout(function() {
+            resultElement.textContent = ''; // ou outro texto desejado
+        }, 3000);
 }

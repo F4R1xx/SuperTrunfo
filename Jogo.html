@@ -16,20 +16,22 @@
   <script src="main.js" defer></script>
 </head>
 <body>
-  <div id="jogo">
-    <div id="game-container">
-      <div id="player-hand" style="display: flex;">
+  <div class="Grid">
+    <div id="jogo">
+      <div id="game-container">
+        <div id="player-hand" style="display: flex;">
+        </div>
+        <div id="played-cards-player" style="display: none;">
+        </div>
       </div>
-      <div id="played-cards-player" style="display: none;">
+      <div id="game-container-computer">
+        <div id="computer-hand" style="display: flex;">
+        </div>
+        <div id="played-cards-computer" style="display: none;">
+        </div>
       </div>
-    </div>
-    <div id="game-container-computer">
-      <div id="computer-hand" style="display: flex;">
-      </div>
-      <div id="played-cards-computer" style="display: none;">
-      </div>
-    </div>
-  </div>  
+    </div>  
+  </div>
 
   <div id="fundojogo">
     <div id="result"></div>
@@ -44,9 +46,6 @@
 
       <button onclick="play()" id="playButton" disabled>Jogar</button>
 
-      <div id="new-round">
-        <button onclick="reiniciarjogo()">Nova Rodada</button>
-      </div>
       <div id="score">Pontuação: <span id="playerScore">0</span> - <span id="computerScore">0</span></div>
   </div>
 </body>
