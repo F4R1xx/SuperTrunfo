@@ -17,3 +17,12 @@ const Botafogo = [
       { name: 'Jefferson', Defesa: 83, Control: 59, Ataque: 40, Over: 182, front: 'Botafogo/Jefferson.png', back: 'Botafogo/BackBotafogo.png' },
       // Adicione mais cartas conforme necessário
     ];
+
+const BotafogoINFO = [
+  //Clube
+  Tier = 2,
+  //Estádio
+  estádio = "Engenhão",
+  capacidade = 44661,
+  valor_ingresso = 60
+]

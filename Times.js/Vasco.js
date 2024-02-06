@@ -18,3 +18,12 @@ const Vasco = [
       { name: 'Roberto Dinamite', Defesa: 62, Control: 68, Ataque: 92, Over: 222, front: 'Vasco/RobertoDinamite.png', back: 'Vasco/BackVasco.png' },
       // Adicione mais cartas conforme necessário
     ];
+
+    const VascoINFO = [
+      // Clube
+      Tier = 2,
+      // Estádio
+      estádio = "São Januário",
+      capacidade = 21880,
+      valor_ingresso = 50
+    ];

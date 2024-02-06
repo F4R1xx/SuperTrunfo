@@ -11,6 +11,7 @@ const params = new URLSearchParams(window.location.search);
 const playerTeam = params.get('player');
 const opponentTeam = params.get('opponent');
 
+
 // Inicializar o jogo com os times escolhidos
 document.addEventListener('DOMContentLoaded', () => {
   startGame(playerTeam, opponentTeam);
@@ -235,13 +236,14 @@ function play() {
 
     // Desabilitar o botão de jogar e exibir o botão de nova rodada (F5)
     document.getElementById('playButton').disabled = true;
-    document.getElementById('new-round').style.display = 'block';
+
 
     // Verificar se o jogo acabou
+
     if (playerHand.length === 0 || computerHand.length === 0) {
       document.getElementById('computer-hand').style.display = 'none';
       document.getElementById('player-hand').style.display = 'none';
-      endGame(opponentTeam);
+      endGame();
     }
   }
 }
@@ -275,7 +277,27 @@ function updateScoreUI() {
   document.getElementById('computerScore').textContent = computerScore;
 }
 
-function endGame(opponentTeam) {
+function endGame() {
+  CreateButtonFinal()
+  const resultElement = document.getElementById('result');
+  resultElement.textContent = 'Fim de Jogo!';
+  document.getElementById('playButton').disabled = true;
+}
+
+function reiniciarjogo(){
+  window.location.href = 'jogo.html?player=' + playerTeam + '&opponent=' + opponentTeam;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  startGame();
+});
+
+function mostrarOcultarElemento() {
+  var meuElemento = document.getElementById("resultadohtml");
+      meuElemento.style.display = "block";
+}
+
+function earnMoneyTeam(opponentTeam){
   if (playerScore > computerScore){
     switch (opponentTeam) {
       case 'Fluminense':
@@ -289,15 +311,103 @@ function endGame(opponentTeam) {
       // Adicione mais casos conforme necessário para outros times
     }
   }
-  const resultElement = document.getElementById('result');
-  resultElement.textContent = 'Fim de Jogo!';
-  document.getElementById('playButton').disabled = false;
 }
 
-function reiniciarjogo(){
-  window.location.href = 'jogo.html?player=' + playerTeam + '&opponent=' + opponentTeam;
+function CreateButtonFinal(){
+  const newButton = document.createElement('button');
+
+// Adicionar texto ao botão
+newButton.textContent = 'Ver resultado';
+
+// Adicionar um identificador ao botão (opcional)
+newButton.id = 'myButton';
+
+// Adicionar um manipulador de eventos ao botão (opcional)
+newButton.addEventListener('click', function() {
+  mostrarOcultarElemento();
+  criarParagrafo(playerTeam,opponentTeam)
+});
+
+// Obter a div existente com o id "attribute-buttons"
+const attributeButtonsDiv = document.getElementById('ButtonFinal');
+
+// Adicionar o botão à div existente
+attributeButtonsDiv.appendChild(newButton);
+}
+
+function criarParagrafo(playerTeam,opponentTeam) {
+  // Cria um novo elemento <p>
+  var novoParagrafo = document.createElement("p");
+ 
+  switch (playerTeam) {
+    case 'Fluminense':
+      console.log(FluminenseINFO[0]);
+      console.log(FluminenseINFO[1]);
+      console.log(FluminenseINFO[2]);
+      console.log(FluminenseINFO[3]);
+      break;
+    case 'Flamengo':
+      console.log(FlamengoINFO[0]);
+      console.log(FlamengoINFO[1]);
+      console.log(FlamengoINFO[2]);
+      console.log(FlamengoINFO[3]);
+      break;
+    case 'Botafogo':
+      console.log(BotafogoINFO[0]);
+      console.log(BotafogoINFO[1]);
+      console.log(BotafogoINFO[2]);
+      console.log(BotafogoINFO[3]);
+      break;
+    case 'Vasco':
+      console.log(VascoINFO[0]);
+      console.log(VascoINFO[1]);
+      console.log(VascoINFO[2]);
+      console.log(VascoINFO[3]);
+      break;
+    // Adicione mais casos conforme necessário para outros times
+  }
+
+  switch (opponentTeam) {
+    case 'Fluminense':
+      console.log(FluminenseINFO[0]);
+      console.log(FluminenseINFO[1]);
+      console.log(FluminenseINFO[2]);
+      console.log(FluminenseINFO[3]);
+      break;
+    case 'Flamengo':
+      console.log(FlamengoINFO[0]);
+      console.log(FlamengoINFO[1]);
+      console.log(FlamengoINFO[2]);
+      console.log(FlamengoINFO[3]);
+      break;
+    case 'Botafogo':
+      console.log(BotafogoINFO[0]);
+      console.log(BotafogoINFO[1]);
+      console.log(BotafogoINFO[2]);
+      console.log(BotafogoINFO[3]);
+      break;
+    case 'Vasco':
+      console.log(VascoINFO[0]);
+      console.log(VascoINFO[1]);
+      console.log(VascoINFO[2]);
+      console.log(VascoINFO[3]);
+      break;
+    // Adicione mais casos conforme necessário para outros times
+  }
+
+  
+
+  // Adiciona texto ao parágrafo
+  novoParagrafo.textContent = "Este é um novo parágrafo criado com JavaScript!";
+
+  // Obtém o elemento com o ID "container"
+  var container = document.getElementById("container");
+
+  // Adiciona o parágrafo ao container
+  container.appendChild(novoParagrafo);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  startGame();
+  criarParagrafo(playerTeam,opponentTeam);
 });
+

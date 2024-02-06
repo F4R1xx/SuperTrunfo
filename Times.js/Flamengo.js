@@ -21,3 +21,12 @@ const Flamengo = [
       { name: 'Adriano Idolo', Defesa: 67, Control: 71, Ataque: 90, Over: 228, front: 'Flamengo/AdrianoImperador.png', back: 'Flamengo/BackFlamengo.png' },
       // Adicione mais cartas conforme necessário
     ];
+
+const FlamengoINFO = [
+  //Clube
+  Tier = 2,
+  //Estádio
+  estádio = "Maracanã",
+  capacidade = 78838,
+  valor_ingresso = 100
+]

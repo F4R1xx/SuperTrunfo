@@ -144,7 +144,6 @@ function setButtonState(images, teamName) {
       }
   }
 
-  console.log(`O ${teamName} foi ${teamBought ? '' : 'não '}comprado.`);
 }
 
 function setButtonStateBanner(buttons, teamName) {

@@ -25,3 +25,12 @@ const Fluminense = [
       { name: 'John Kennedy Craque', Defesa: 65, Control: 69, Ataque: 75, Over: 209, front: 'Fluminense/JohnKennedyCraque.png', back: 'Fluminense/BackFluminense.png' },
       // Adicione mais cartas conforme necessário
     ];
+
+const FluminenseINFO = [
+  //Clube
+  Tier = 2,
+  //Estádio
+  estádio = "Maracanã",
+  capacidade = 78838,
+  valor_ingresso = 60
+];

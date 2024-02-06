@@ -166,3 +166,28 @@ transition: border-color 0.3s ease, transform 0.3s ease;
   width: fit-content;
   margin: 10px auto;
 }
+
+#resultadohtml{
+  margin-top: 50px !important;
+  margin-bottom: 5000px !important;
+  border-radius: 20px;
+  margin: 0 auto;
+  display: none;
+  background-color: rgb(224, 224, 224);
+  border: none;
+  box-shadow: 0 0 100px rgb(0, 0, 0);
+}
+
+#myButton{
+  margin-left: 10px;
+  margin-top: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
